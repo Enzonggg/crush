@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi Crush</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="heart-container">
+       <div class="heart">❤</div>
+       <div class="heart">❤</div>
+       <div class="heart">❤</div>
+       <div class="heart">❤</div>
+       <div class="heart">❤</div>
+       <div class="heart">❤</div>
+    </div>
+         
+    <div id="lock-screen">
+        <div class="glass-card">
+            <div class="lock-icon"><span class="heart-pulse">❤</span></div>
+            <p>Every time I see your name, my heart smiles a little.</p>
+            
+            <div class="input-group">
+                <input type="password" id="password-input" placeholder="Enter your birthday to unlock." autofocus>
+                <div id="togglePassword" class="toggle-eye">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </div>
+            </div>
+
+            <button class="unlock-btn" onclick="checkPassword()">OPEN GIFT</button>
+            <p id="error-msg" class="error-text">Hindi yan yon!...</p>
+        </div>
+    </div>
+
+    <div id="envelope-overlay" style="display: none;">
+        <div class="envelope-wrapper" onclick="openEnvelope()">
+            <div class="envelope" id="main-envelope">
+                <div class="heart-seal">❤</div>
+            </div>
+            <p class="click-me">Click to open your gift!</p>
+        </div>
+    </div>
+
+    <div id="main-content-wrapper" style="display: none;">
+        <header>
+            <div class="header-content">
+                <p class="recipient-name">To my Special Friend, Angel</p>
+
+                <h1 class="shimmer-title">Happy Valentine's Day</h1>
+                <p id="intro-greet">to the most beautiful person ever</p>
+                <div class="scroll-container">
+                    <p class="scroll-text">Scroll down to see...</p>
+                    <div class="heart-icon pulse">❤</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="moment-container">
+            <div class="moment">
+                <div class="photo-frame"><img src="/images/1.jpg" alt="Us"></div>
+                <div class="text-content">
+                    <h3>Where it started</h3>
+                    <p>It started with laughs and silly chats, and somehow you became my special person.</p>
+                </div>
+            </div>
+
+            <div class="moment">
+                <div class="photo-frame"><img src="/images/2.jpg" alt="Us"></div>
+                <div class="text-content">
+                    <h3>Shared Joy</h3>
+                    <p>Every time you laugh, I can’t help but smile too… maybe more than I should.</p>
+                </div>
+            </div>
+
+            <div class="moment">
+                <div class="photo-frame"><img src="images/3.jpg" alt="Us"></div>
+                <div class="text-content">
+                    <h3>Side By Side</h3>
+                    <p>No matter where we go, being around you makes everything feel better… maybe even a little exciting.</p>
+                </div>
+            </div>
+
+            <div class="moment">
+                <div class="photo-frame"><img src="images/4.jpg" alt="Us"></div>
+                <div class="text-content">
+                    <h3>My Safe Place</h3>
+                    <p>When I'm with you, I feel completely safe and at peace. You make me feel like I can be myself without any fear.</p>
+                </div>
+            </div>
+
+            <div class="moment">
+                <div class="photo-frame"><img src="images/5.jpg" alt="Us"></div>
+                <div class="text-content">
+                    <h3>My Special Friend</h3>
+                    <p>Thanks for being my friend… and maybe the one I secretly can’t stop thinking about.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="typing-container">
+            <p id="typing-text"></p>
+        </div>
+
+        <footer>
+            <p>You will always be my special person. <span class="heart-red">❤</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
