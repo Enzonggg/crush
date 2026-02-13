@@ -1,118 +1,61 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi Crush</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Be My Valentine?</title>
+    <!-- CDN Link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.6.0/confetti.browser.min.js"></script>
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="css/style.css"> 
+    <!-- Icon -->
+    <link rel="Icon" href="images/teddy-bear.png" type="images/png">
 </head>
 <body>
-
-    <div id="heart-container">
-       <div class="heart">❤</div>
-       <div class="heart">❤</div>
-       <div class="heart">❤</div>
-       <div class="heart">❤</div>
-       <div class="heart">❤</div>
-       <div class="heart">❤</div>
-    </div>
-         
-    <div id="lock-screen">
-        <div class="glass-card">
-            <div class="lock-icon"><span class="heart-pulse">❤</span></div>
-            <p>Every time I see your name, my heart smiles a little.</p>
-            
-            <div class="input-group">
-                <input type="password" id="password-input" placeholder="Enter your birthday to unlock." autofocus>
-                <div id="togglePassword" class="toggle-eye">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                        <circle cx="12" cy="12" r="3"></circle>
-                    </svg>
-                </div>
-            </div>
-
-            <button class="unlock-btn" onclick="checkPassword()">OPEN GIFT</button>
-            <p id="error-msg" class="error-text">Hindi yan yon!...</p>
-        </div>
-    </div>
-
-    <div id="envelope-overlay" style="display: none;">
-        <div class="envelope-wrapper" onclick="openEnvelope()">
-            <div class="envelope" id="main-envelope">
-                <div class="heart-seal">❤</div>
-            </div>
-            <p class="click-me">Click to open your gift!</p>
-        </div>
-    </div>
-
-    <div id="main-content-wrapper" style="display: none;">
-        <header>
-            <div class="header-content">
-                <p class="recipient-name">To my Special Friend, Angel</p>
-
-                <h1 class="shimmer-title">Happy Valentine's Day</h1>
-                <p id="intro-greet">to the most beautiful person ever</p>
-                <div class="scroll-container">
-                    <p class="scroll-text">Scroll down to see...</p>
-                    <div class="heart-icon pulse">❤</div>
-                </div>
-            </div>
-        </header>
-
-        <div class="moment-container">
-            <div class="moment">
-                <div class="photo-frame"><img src="/images/1.jpg" alt="Us"></div>
-                <div class="text-content">
-                    <h3>Where it started</h3>
-                    <p>It started with laughs and silly chats, and somehow you became my special person.</p>
-                </div>
-            </div>
-
-            <div class="moment">
-                <div class="photo-frame"><img src="/images/2.jpg" alt="Us"></div>
-                <div class="text-content">
-                    <h3>Shared Joy</h3>
-                    <p>Every time you laugh, I can’t help but smile too… maybe more than I should.</p>
-                </div>
-            </div>
-
-            <div class="moment">
-                <div class="photo-frame"><img src="images/3.jpg" alt="Us"></div>
-                <div class="text-content">
-                    <h3>Side By Side</h3>
-                    <p>No matter where we go, being around you makes everything feel better… maybe even a little exciting.</p>
-                </div>
-            </div>
-
-            <div class="moment">
-                <div class="photo-frame"><img src="images/4.jpg" alt="Us"></div>
-                <div class="text-content">
-                    <h3>My Safe Place</h3>
-                    <p>When I'm with you, I feel completely safe and at peace. You make me feel like I can be myself without any fear.</p>
-                </div>
-            </div>
-
-            <div class="moment">
-                <div class="photo-frame"><img src="images/5.jpg" alt="Us"></div>
-                <div class="text-content">
-                    <h3>My Special Friend</h3>
-                    <p>Thanks for being my friend… and maybe the one I secretly can’t stop thinking about.</p>
-                </div>
+    <div class="hearts"></div>
+    <div class="container">
+        <!-- Step 1 -->
+        <div class="step active" id="step1">
+            <img src="images/step2.gif" alt="Cute Bear" class="bear-img">
+            <h1>Princess Harriet Adrales,Would You Be My Valentine? 💝</h1>
+            <div class="buttons">
+                <button class="btn btn-yes" onclick="goToStep2()">Yes</button>
+                <button class="btn btn-no" onmouseover="moveButton(this)" onclick="moveButton(this)">No</button>
             </div>
         </div>
 
-        <div id="typing-container">
-            <p id="typing-text"></p>
+        <!-- Step 2 -->
+        <div class="step" id="step2">
+            <img src="images/dudu-twisting-dance.gif" alt="Cute Bear with Hearts" class="bear-img">
+            <h1>Are you sure you want to be my valentine? 💕</h1>
+            <div class="buttons">
+                <button class="btn btn-yes" onclick="goToStep3()">Yes, 100% Sure</button>
+                <button class="btn btn-no" onmouseover="moveButton(this)" onclick="moveButton(this)">Let me think...</button>
+            </div>
         </div>
 
-        <footer>
-            <p>You will always be my special person. <span class="heart-red">❤</span></p>
-        </footer>
+        <!-- Step 3 -->
+        <div class="step" id="step3">
+            <img src="images/step22.gif" alt="Cute Bear in Love" class="bear-img">
+            <h1>Promise me you'll always be my valentine ❤️</h1>
+            <div class="buttons">
+                <button class="btn btn-yes" onclick="finalStep()">Yes, I Promise</button>
+            </div>
+        </div>
+
+        <!-- Final Message -->
+        <div class="final-message">
+            <img src="images/stafford-matt-unscreen.gif" alt="Cute Bear in Love" class="bear-img">
+            <p>Yeayyyyy, you made valentine this time so special for me, Thank You! 🥰</p>
+            <p style="margin-top: 15px;">You can text me by clicking the button below, I'm waiting for you!! 💌</p>
+        </div>
+        
+        <a href="https://www.facebook.com/lorenzo.aurin.2025❤️" class="whatsapp-btn" target="_blank">
+            Chat me here 💌
+        </a>        
     </div>
 
-    <script src="script.js"></script>
+    <!-- Script JS -->
+    <script src="js/script.js"></script>
 </body>
 </html>
